@@ -4,9 +4,9 @@
 </template>
 
 <script>
-import NavBar from './components/NewBar.vue'
-import "bootstrap/dist/css/bootstrap.min.css" 
-import "bootstrap/dist/js/bootstrap" 
+import NavBar from './components/NavBar.vue'
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap"
 export default {
   components: {
     NavBar
@@ -16,7 +16,8 @@ export default {
 
 <style>
 body {
-  background-image: url("@/assets/background0.png");
+  background-image: url("@/assets/images/background0.png");
   background-size: cover;
+  background-repeat: no-repeat;
 }
 </style>

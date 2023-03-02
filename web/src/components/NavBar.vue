@@ -10,15 +10,15 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <!-- <a class="nav-link" aria-current="page" href="/pk/">对战</a> -->
-          <RouterLink class="nav-link" :to="{name: 'pk_index'}">对战</RouterLink>
+          <RouterLink class="nav-link" active-class="active" :to="{name: 'pk_index'}">对战</RouterLink>
         </li>
         <li class="nav-item">
           <!-- <a class="nav-link" href="/record/">对局列表</a> -->
-          <RouterLink class="nav-link" :to="{name: 'record_index'}">对局列表</RouterLink>
+          <RouterLink class="nav-link" active-class="active" :to="{name: 'record_index'}">对局列表</RouterLink>
         </li>
         <li class="nav-item">
           <!-- <a class="nav-link" href="/rank/">排行榜</a> -->
-          <RouterLink class="nav-link" :to="{name: 'rank_index'}">排行榜</RouterLink>
+          <RouterLink class="nav-link" active-class="active" :to="{name: 'rank_index'}">排行榜</RouterLink>
         </li>
       </ul>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -39,6 +39,19 @@
 </nav>
 </template>
 
-<script></script>
+<script>
+import { useRoute } from 'vue-router';
+import { computed } from 'vue'
+
+export default {
+  setup() {
+    const route = useRoute();
+    let route_name = computed(()=>route.name)
+    return {
+      route_name
+    }
+  }
+}
+</script>
 
 <style></style>

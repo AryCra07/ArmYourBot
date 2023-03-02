@@ -1,7 +1,15 @@
 <template>
-    <div>My Bot</div>
+    <PublicContentField>My Bot</PublicContentField>
 </template>
 
-<script></script>
+<script>
+import PublicContentField from '../../../components/PublicContentField.vue'
+
+export default {
+    components: {
+        PublicContentField
+    }
+}
+</script>
 
 <style scoped></style>

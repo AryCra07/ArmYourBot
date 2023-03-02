@@ -1,7 +1,15 @@
 <template>
-    <div>对局列表</div>
+    <PublicContentField>对局列表</PublicContentField>
 </template>
 
-<script></script>
+<script>
+import PublicContentField from '../../components/PublicContentField.vue'
+
+export default {
+    components: {
+        PublicContentField
+    }
+}
+</script>
 
 <style scoped></style>

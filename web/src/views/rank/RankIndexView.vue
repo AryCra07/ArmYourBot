@@ -1,7 +1,15 @@
 <template>
-    <div>排行榜</div>
+    <PublicContentField>排行榜</PublicContentField>
 </template>
 
-<script></script>
+<script>
+import PublicContentField from '../../components/PublicContentField.vue'
+
+export default {
+    components: {
+        PublicContentField
+    }
+}
+</script>
 
 <style scoped></style>
