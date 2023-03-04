@@ -26,6 +26,8 @@ export class GameMap extends GAMEObject {
                 this
             ),
         ];
+
+        this.eye_direction = this.id === 1 ? 2 : 0;
     }
 
     add_listening_events() {
@@ -72,6 +74,28 @@ export class GameMap extends GAMEObject {
             if (snake.status !== "idle") return false;
             if (snake.direction === -1) return false;
         }
+        return true;
+    }
+
+    check_valid(cell) {
+        // check if the position of a snake is valid: no tail or obstacle
+
+        for (const obstacle of this.obstacles) {
+            if (obstacle.r === cell.r && obstacle.c === cell.c) return false;
+        }
+
+        for (const snake of this.snakes) {
+            let k = snake.cells.length;
+            if (!snake.check_tail_increasing()) {
+                // 当蛇尾会前进的时候，蛇尾不要判断
+                k--;
+            }
+            for (let i = 0; i < k; i++) {
+                if (snake.cells[i].r === cell.r && snake.cells[i].c === cell.c)
+                    return false;
+            }
+        }
+
         return true;
     }
 
